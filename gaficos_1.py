@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 
 rng = np.random.default_rng(42)
 
+
 # Datos de calificaciones de los estudiantes
 matematicas = rng.integers(50, 100, 20)
 ciencias = rng.integers(40, 95, 20)
@@ -18,14 +19,15 @@ errores_ciencias = [min(errores_ciencias), max(errores_ciencias)]
 errores_literatura = rng.uniform(3, 6, 2)
 errores_literatura = [min(errores_literatura), max(errores_literatura)]
 
-"""plt.scatter(matematicas, ciencias, color='blue')
+# Gráfico de dispersión:
+plt.scatter(matematicas, ciencias, color='blue')
 plt.title('Relación entre calificaciones de Matematicas y Ciencias')
 plt.xlabel('Calificacion Matematicas')
 plt.ylabel('Calificaciones Ciencias')
 
-plt.show()"""
+plt.show()
 
-
+#Gráfico de barras de error:
 
 #notas promedio
 promedio_matematicas = round(np.mean(matematicas),1)
@@ -42,16 +44,16 @@ materias =['Matematicas','Ciencias','Literatura']
 promedios = [promedio_matematicas,promedio_ciencias,promedio_literatura]
 errores_materias= [errores_promedio_matematicas,errores_promedio_ciencias,errores_promedio_literatura]
 
-"""plt.errorbar(materias,promedios, yerr=errores_materias,fmt = 'o',  capsize=5, label = 'promedio')
+plt.errorbar(materias,promedios, yerr=errores_materias,fmt = 'o',  capsize=5, label = 'promedio')
 plt.xlabel('Materias')
 plt.ylabel('Calificaciones Promedio')
 plt.title('Calificaciones Promedio con barras de error')
 plt.legend()
 # Personalizar la leyenda
 plt.legend(loc='upper left', fontsize='small')
-plt.show()"""
+plt.show()
 
-
+#Histograma:
 plt.hist(matematicas, bins=10)
 plt.title('Distribución de las calificaciones de Matematicas')
 plt.xlabel('Calificaciones de Matematicas')
